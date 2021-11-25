@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Global, css } from '@emotion/react';
 import CountryList from './components/CountryList';
 import GlobalInfo from './components/GlobalInfo';
 import type { ResponseData } from './types';
@@ -20,6 +21,14 @@ const App: React.FunctionComponent = () => {
 
 	return (
 		<div className="App">
+			<Global
+				styles={css`
+					body {
+						background-color: #f1f1f1;
+					}
+				`}
+			/>
+
 			{data ? (
 				<>
 					<GlobalInfo

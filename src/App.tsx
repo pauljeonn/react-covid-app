@@ -20,6 +20,7 @@ const App: React.FunctionComponent = () => {
 		fetchData();
 	}, []);
 
+	// 현재 선택된 country를 activeCountries에 포함시켜준다 (이미 있으면 빼준다)
 	const onCountryClick = (country: Country) => {
 		const countryIndex = activeCountries.findIndex(
 			(activeCountry) => activeCountry.ID === country.ID

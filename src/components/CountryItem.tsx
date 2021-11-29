@@ -18,14 +18,19 @@ const ListItem = styled.li`
 	cursor: pointer;
 
 	@media (min-width: 420px) {
-		flex: 0 0 33.33%;
+		flex: 0 0 20%;
 	}
 `;
 
 const ListContent = styled.div<ListContentProps>`
-	background-color: ${(props) => (props.isActive ? 'skyblue' : 'lightgray')};
+	background-color: ${(props) => (props.isActive ? '#FABB33' : '#F8F9F9')};
 	margin: 10px;
-	padding: 10px 0;
+	padding: 15px 0;
+	border-radius: 10px;
+`;
+
+const CountryName = styled.h4`
+	margin-top: 0;
 `;
 
 const CountryItem: React.FunctionComponent<Props> = ({
@@ -42,10 +47,10 @@ const CountryItem: React.FunctionComponent<Props> = ({
 	return (
 		<ListItem key={country.ID} onClick={() => handleOnClick(country)}>
 			<ListContent isActive={isActive}>
-				<h4>{country.Country}</h4>
-				<div>New Confirmed: {country.NewConfirmed}</div>
-				<div>New Deaths: {country.NewDeaths}</div>
-				<div>New Recovered: {country.NewRecovered}</div>
+				<CountryName>{country.Country}</CountryName>
+				<div>확진자: {country.NewConfirmed}</div>
+				<div>사망자: {country.NewDeaths}</div>
+				<div>완치자: {country.NewRecovered}</div>
 			</ListContent>
 		</ListItem>
 	);

@@ -19,10 +19,16 @@ const CountryList: React.FunctionComponent<Props> = ({
 }) => {
 	return (
 		<ListWrapper>
-			{countries.map((country) => (
+			{/* {countries.map((country) => (
 				// props로 받아온 onItemClick을 CountryItem의 props로 또 전달한다
 				<CountryItem country={country} onItemClick={onItemClick} />
-			))}
+			))} */}
+			{countries.map((country) => {
+				if (country.NewConfirmed > 0) {
+					// props로 받아온 onItemClick을 CountryItem의 props로 또 전달한다
+					return <CountryItem country={country} onItemClick={onItemClick} />;
+				}
+			})}
 		</ListWrapper>
 	);
 };

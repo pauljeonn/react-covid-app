@@ -41,7 +41,9 @@ const App: React.FunctionComponent = () => {
 			<Global
 				styles={css`
 					body {
-						background-color: #f1f1f1;
+						background-color: white;
+						font-family: 'Lato', sans-serif;
+						font-family: 'Noto Sans KR', sans-serif;
 					}
 				`}
 			/>
@@ -52,13 +54,21 @@ const App: React.FunctionComponent = () => {
 						newConfirmed={data.Global.NewConfirmed}
 						newDeaths={data.Global.NewDeaths}
 						newRecovered={data.Global.NewRecovered}
+						totalConfirmed={data.Global.TotalConfirmed}
+						totalDeaths={data.Global.TotalDeaths}
+						totalRecovered={data.Global.TotalRecovered}
+						date={data.Global.Date}
 					/>
 
 					<hr />
 
 					{activeCountries.length ? (
 						<BarChart countries={activeCountries} />
-					) : null}
+					) : (
+						<p style={{ textAlign: 'center' }}>
+							비교하고싶은 나라를 클릭해주세요.
+						</p>
+					)}
 
 					<CountryList
 						countries={data.Countries}

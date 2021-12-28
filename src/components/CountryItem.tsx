@@ -12,7 +12,6 @@ interface ListContentProps {
 }
 
 const ListItem = styled.li`
-	/* max-width: 300px; */
 	list-style-type: none;
 	flex: 0 1 50%;
 	text-align: center;

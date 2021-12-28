@@ -8,7 +8,7 @@ interface Props {
 }
 
 const ListWrapper = styled.ul`
-	padding: 0 50px;
+	padding: 0 150px;
 	display: flex;
 	flex-wrap: wrap;
 

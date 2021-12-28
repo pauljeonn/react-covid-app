@@ -20,16 +20,28 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
 	margin-top: 10px;
+
+	@media (max-width: 480px) {
+		font-size: 22px;
+	}
 `;
 
 const Today = styled.h3`
 	margin-top: 5px;
+
+	@media (max-width: 480px) {
+		font-size: 16px;
+	}
 `;
 
 const Updated = styled.h3`
 	margin-top: 5px;
 	font-size: 16px;
 	color: gray;
+
+	@media (max-width: 480px) {
+		font-size: 14px;
+	}
 `;
 
 const Stats = styled.div`
@@ -42,12 +54,17 @@ const Stats = styled.div`
 	box-sizing: border-box;
 	background-color: white;
 	margin-bottom: 15px;
+
+	@media (max-width: 480px) {
+		min-width: 300px;
+		width: 80%;
+		max-width: 400px;
+		flex-direction: column;
+	}
 `;
 
 const StatsItem = styled.div`
 	width: 250px;
-	/* border: 1px solid lightgray; */
-	/* border-radius: 20px; */
 	box-sizing: border-box;
 	padding-left: 20px;
 	display: flex;
@@ -55,6 +72,17 @@ const StatsItem = styled.div`
 	align-items: flex-start;
 	line-height: 0.5;
 	background-color: white;
+
+	@media (max-width: 480px) {
+		&:first-child {
+			padding-bottom: 15px;
+			border-bottom: 2px solid lightgray;
+		}
+
+		&:nth-child(2) {
+			padding-top: 15px;
+		}
+	}
 `;
 
 const StatsText = styled.p`
@@ -102,7 +130,6 @@ const GlobalInfo: React.FunctionComponent<Props> = ({
 	return (
 		<Wrapper>
 			<Title>코로나19(COVID-19) 세계 현황</Title>
-			{/* <Today>{dateString.toString()}</Today> */}
 			<Today>{todayString}</Today>
 			<Updated>마지막 업데이트: {updatedString}</Updated>
 			<Stats>

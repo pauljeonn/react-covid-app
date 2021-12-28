@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Country } from '../types';
 
 interface Props {
 	country: Country;
 	onItemClick: (country: Country) => void;
+	isReset: Boolean;
 }
 
 interface ListContentProps {
@@ -40,8 +41,13 @@ const CountryName = styled.h4`
 const CountryItem: React.FunctionComponent<Props> = ({
 	country,
 	onItemClick,
+	isReset,
 }) => {
 	const [isActive, setIsActive] = useState<Boolean>(false);
+
+	useEffect(() => {
+		setIsActive(false);
+	}, [isReset]);
 
 	const handleOnClick = (country: Country) => {
 		onItemClick(country); // props로 받아온 onItemClick 함수 실행

@@ -19,7 +19,8 @@ const options = {
 };
 
 const ChartWrapper = styled.div`
-	max-width: 700px;
+	width: 95%;
+	max-width: 800px;
 	margin: 0 auto;
 `;
 

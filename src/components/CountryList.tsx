@@ -5,6 +5,7 @@ import CountryItem from './CountryItem';
 interface Props {
 	countries: Country[];
 	onItemClick: (country: Country) => void;
+	isReset: Boolean;
 }
 
 const ListWrapper = styled.ul`
@@ -20,6 +21,7 @@ const ListWrapper = styled.ul`
 const CountryList: React.FunctionComponent<Props> = ({
 	countries,
 	onItemClick,
+	isReset,
 }) => {
 	return (
 		<ListWrapper>
@@ -30,7 +32,13 @@ const CountryList: React.FunctionComponent<Props> = ({
 			{countries.map((country) => {
 				if (country.NewConfirmed > 0) {
 					// props로 받아온 onItemClick을 CountryItem의 props로 또 전달한다
-					return <CountryItem country={country} onItemClick={onItemClick} />;
+					return (
+						<CountryItem
+							country={country}
+							onItemClick={onItemClick}
+							isReset={isReset}
+						/>
+					);
 				}
 			})}
 		</ListWrapper>

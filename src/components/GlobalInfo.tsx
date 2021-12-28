@@ -98,6 +98,7 @@ const GlobalInfo: React.FunctionComponent<Props> = ({
 	totalRecovered,
 	date,
 }) => {
+	// 오늘 날짜와 마지막 업데이트 날짜 포매팅
 	let today = new Date();
 	let year = today.getFullYear();
 	let month = ('0' + (today.getMonth() + 1)).slice(-2);

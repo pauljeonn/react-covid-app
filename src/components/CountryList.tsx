@@ -8,9 +8,13 @@ interface Props {
 }
 
 const ListWrapper = styled.ul`
-	padding: 0;
+	padding: 0 50px;
 	display: flex;
 	flex-wrap: wrap;
+
+	@media (max-width: 480px) {
+		padding: 0;
+	}
 `;
 
 const CountryList: React.FunctionComponent<Props> = ({

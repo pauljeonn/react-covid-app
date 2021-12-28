@@ -12,12 +12,17 @@ interface ListContentProps {
 }
 
 const ListItem = styled.li`
+	/* max-width: 300px; */
 	list-style-type: none;
 	flex: 0 1 50%;
 	text-align: center;
 	cursor: pointer;
 
-	@media (min-width: 420px) {
+	@media (min-width: 480px) {
+		flex: 0 0 25%;
+	}
+
+	@media (min-width: 1600px) {
 		flex: 0 0 20%;
 	}
 `;
